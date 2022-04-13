@@ -61,6 +61,6 @@ Features implemented include:
 
 * [React](https://github.com/facebook/react) - The web framework used
 * [FastAPI](https://github.com/tiangolo/fastapi) - The web framework used
-
+* [React Soft Dashboard](https://github.com/app-generator/react-soft-ui-dashboard) -Template
 ## Contributing
 
