@@ -1,4 +1,4 @@
-# Project Title
+# Marinelink(blockchain platform)
 
 The code was written to create a reliable bill of lading platform by placing the bill of lading on the blockchain.
 
@@ -17,7 +17,6 @@ What things you need to install the package and how to install them
 git clone https://github.com/taebbang/goldmoon.git
 cd marinelink
 pip install -r requirement.txt
-
 ```
 
 ### Installing
