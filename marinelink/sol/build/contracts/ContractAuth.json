@@ -1,0 +1,1779 @@
+{
+  "contractName": "ContractAuth",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "authTable",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256[2]",
+          "name": "contract_id",
+          "type": "uint256[2]"
+        }
+      ],
+      "name": "getContractAuthKey",
+      "outputs": [
+        {
+          "internalType": "uint256[2]",
+          "name": "",
+          "type": "uint256[2]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256[2]",
+          "name": "contract_id",
+          "type": "uint256[2]"
+        },
+        {
+          "internalType": "uint256[2]",
+          "name": "contract_auth",
+          "type": "uint256[2]"
+        }
+      ],
+      "name": "setContractAuthKey",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"authTable\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256[2]\",\"name\":\"contract_id\",\"type\":\"uint256[2]\"}],\"name\":\"getContractAuthKey\",\"outputs\":[{\"internalType\":\"uint256[2]\",\"name\":\"\",\"type\":\"uint256[2]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256[2]\",\"name\":\"contract_id\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[2]\",\"name\":\"contract_auth\",\"type\":\"uint256[2]\"}],\"name\":\"setContractAuthKey\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/ContractAuth.sol\":\"ContractAuth\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/ContractAuth.sol\":{\"keccak256\":\"0x17cd1f9ab22b149500c2ce5cb370fbb780e19b716070088e455a4eb51ae52506\",\"urls\":[\"bzz-raw://5d38c579fa17cb703853f4d77135c76966d3ce640b24b89cca4c00093dfa7a95\",\"dweb:/ipfs/QmXjfo7TXsGMGMog7Lq2ptmjpFd6rDbBCEfHen9aWUgmue\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506103f0806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c806357c562461461004657806359d05458146100e7578063daffea511461013d575b600080fd5b6100a96004803603604081101561005c57600080fd5b8101908080604001906002806020026040519081016040528092919082600260200280828437600081840152601f19601f82011690508083019250505050505091929192905050506101e3565b6040518082600260200280838360005b838110156100d45780820151818401526020810190506100b9565b5050505090500191505060405180910390f35b610127600480360360608110156100fd57600080fd5b81019080803590602001909291908035906020019092919080359060200190929190505050610273565b6040518082815260200191505060405180910390f35b6101e16004803603608081101561015357600080fd5b8101908080604001906002806020026040519081016040528092919082600260200280828437600081840152601f19601f820116905080830192505050505050919291929080604001906002806020026040519081016040528092919082600260200280828437600081840152601f19601f82011690508083019250505050505091929192905050506102a5565b005b6101eb610334565b600080836000600281106101fb57fe5b6020020151815260200190815260200160002060008360016002811061021d57fe5b60200201518152602001908152602001600020600280602002604051908101604052809291908260028015610267576020028201915b815481526020019060010190808311610253575b50505050509050919050565b6000602052826000526040600020602052816000526040600020816002811061029857fe5b0160009250925050505481565b6040518060400160405280826000600281106102bd57fe5b60200201518152602001826001600281106102d457fe5b6020020151815250600080846000600281106102ec57fe5b6020020151815260200190815260200160002060008460016002811061030e57fe5b6020020151815260200190815260200160002090600261032f929190610356565b505050565b6040518060400160405280600290602082028038833980820191505090505090565b8260028101928215610385579160200282015b82811115610384578251825591602001919060010190610369565b5b5090506103929190610396565b5090565b6103b891905b808211156103b457600081600090555060010161039c565b5090565b9056fea265627a7a72315820f89da88f494d4447fb580834803fa1e9c0cc965688cd0e0156a040deb3455cd364736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c806357c562461461004657806359d05458146100e7578063daffea511461013d575b600080fd5b6100a96004803603604081101561005c57600080fd5b8101908080604001906002806020026040519081016040528092919082600260200280828437600081840152601f19601f82011690508083019250505050505091929192905050506101e3565b6040518082600260200280838360005b838110156100d45780820151818401526020810190506100b9565b5050505090500191505060405180910390f35b610127600480360360608110156100fd57600080fd5b81019080803590602001909291908035906020019092919080359060200190929190505050610273565b6040518082815260200191505060405180910390f35b6101e16004803603608081101561015357600080fd5b8101908080604001906002806020026040519081016040528092919082600260200280828437600081840152601f19601f820116905080830192505050505050919291929080604001906002806020026040519081016040528092919082600260200280828437600081840152601f19601f82011690508083019250505050505091929192905050506102a5565b005b6101eb610334565b600080836000600281106101fb57fe5b6020020151815260200190815260200160002060008360016002811061021d57fe5b60200201518152602001908152602001600020600280602002604051908101604052809291908260028015610267576020028201915b815481526020019060010190808311610253575b50505050509050919050565b6000602052826000526040600020602052816000526040600020816002811061029857fe5b0160009250925050505481565b6040518060400160405280826000600281106102bd57fe5b60200201518152602001826001600281106102d457fe5b6020020151815250600080846000600281106102ec57fe5b6020020151815260200190815260200160002060008460016002811061030e57fe5b6020020151815260200190815260200160002090600261032f929190610356565b505050565b6040518060400160405280600290602082028038833980820191505090505090565b8260028101928215610385579160200282015b82811115610384578251825591602001919060010190610369565b5b5090506103929190610396565b5090565b6103b891905b808211156103b457600081600090555060010161039c565b5090565b9056fea265627a7a72315820f89da88f494d4447fb580834803fa1e9c0cc965688cd0e0156a040deb3455cd364736f6c63430005100032",
+  "sourceMap": "36:1005:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;36:1005:0;;;;;;;",
+  "deployedSourceMap": "36:1005:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;36:1005:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;451:198;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;451:198:0;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;451:198:0;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;451:198:0;;;;;;;;;;;;;;;;212:67;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;212:67:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;719:319;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;719:319:0;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;719:319:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;719:319:0;;;;;;;;;;;;;;:::i;:::-;;451:198;558:17;;:::i;:::-;600:9;:25;610:11;622:1;610:14;;;;;;;;;;;600:25;;;;;;;;;;;:41;626:11;638:1;626:14;;;;;;;;;;;600:41;;;;;;;;;;;593:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;451:198;;;:::o;212:67::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;719:319::-;854:117;;;;;;;;913:13;927:1;913:16;;;;;;;;;;;854:117;;;;944:13;958:1;944:16;;;;;;;;;;;854:117;;;:9;:25;864:11;876:1;864:14;;;;;;;;;;;854:25;;;;;;;;;;;:41;880:11;892:1;880:14;;;;;;;;;;;854:41;;;;;;;;;;;:117;;;;;;;:::i;:::-;;719:319;;:::o;36:1005::-;;;;;;;;;;;29:2:-1;21:6;17:15;117:4;105:10;97:6;88:34;148:4;140:6;136:17;126:27;;0:157;36:1005:0;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity >=0.4.22 <0.9.0;\r\n\r\ncontract ContractAuth {\r\n    // enum type variable to store user gender\r\n    // Actual user object which we will store\r\n    // mapping(string => string) public authTable;\r\n    mapping(uint256 => mapping(uint256 => uint256[2])) public authTable;\r\n\r\n    // event signContract(uint256[2] contract_id, uint256[2] contract_auth);\r\n\r\n    // user object\r\n    //Internal function to conver genderType enum from string\r\n    function getContractAuthKey(uint256[2] memory contract_id)\r\n        public\r\n        view\r\n        returns (uint256[2] memory)\r\n    {\r\n        return authTable[contract_id[0]][contract_id[1]];\r\n    }\r\n\r\n    //Internal function to convert genderType enum to string\r\n    function setContractAuthKey(\r\n        uint256[2] memory contract_id,\r\n        uint256[2] memory contract_auth\r\n    ) public {\r\n        authTable[contract_id[0]][contract_id[1]] = [\r\n            contract_auth[0],\r\n            contract_auth[1]\r\n        ];\r\n        // emit signContract(contract_id, contract_auth);\r\n    }\r\n}\r\n",
+  "sourcePath": "C:\\Users\\HY\\Desktop\\anib\\marinelink\\sol\\contracts\\ContractAuth.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/ContractAuth.sol",
+    "exportedSymbols": {
+      "ContractAuth": [
+        62
+      ]
+    },
+    "id": 63,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 62,
+        "linearizedBaseContracts": [
+          62
+        ],
+        "name": "ContractAuth",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 9,
+            "name": "authTable",
+            "nodeType": "VariableDeclaration",
+            "scope": 62,
+            "src": "212:67:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_array$_t_uint256_$2_storage_$_$",
+              "typeString": "mapping(uint256 => mapping(uint256 => uint256[2]))"
+            },
+            "typeName": {
+              "id": 8,
+              "keyType": {
+                "id": 2,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "220:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "212:50:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_array$_t_uint256_$2_storage_$_$",
+                "typeString": "mapping(uint256 => mapping(uint256 => uint256[2]))"
+              },
+              "valueType": {
+                "id": 7,
+                "keyType": {
+                  "id": 3,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "239:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "nodeType": "Mapping",
+                "src": "231:30:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_array$_t_uint256_$2_storage_$",
+                  "typeString": "mapping(uint256 => uint256[2])"
+                },
+                "valueType": {
+                  "baseType": {
+                    "id": 4,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "250:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 6,
+                  "length": {
+                    "argumentTypes": null,
+                    "hexValue": "32",
+                    "id": 5,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "258:1:0",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_2_by_1",
+                      "typeString": "int_const 2"
+                    },
+                    "value": "2"
+                  },
+                  "nodeType": "ArrayTypeName",
+                  "src": "250:10:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$2_storage_ptr",
+                    "typeString": "uint256[2]"
+                  }
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 30,
+              "nodeType": "Block",
+              "src": "582:67:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 20,
+                        "name": "authTable",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 9,
+                        "src": "600:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_array$_t_uint256_$2_storage_$_$",
+                          "typeString": "mapping(uint256 => mapping(uint256 => uint256[2] storage ref))"
+                        }
+                      },
+                      "id": 24,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 21,
+                          "name": "contract_id",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 13,
+                          "src": "610:11:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_uint256_$2_memory_ptr",
+                            "typeString": "uint256[2] memory"
+                          }
+                        },
+                        "id": 23,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 22,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "622:1:0",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "610:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "600:25:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_array$_t_uint256_$2_storage_$",
+                        "typeString": "mapping(uint256 => uint256[2] storage ref)"
+                      }
+                    },
+                    "id": 28,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 25,
+                        "name": "contract_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13,
+                        "src": "626:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$2_memory_ptr",
+                          "typeString": "uint256[2] memory"
+                        }
+                      },
+                      "id": 27,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "hexValue": "31",
+                        "id": 26,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "638:1:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_1_by_1",
+                          "typeString": "int_const 1"
+                        },
+                        "value": "1"
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "626:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "600:41:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$2_storage",
+                      "typeString": "uint256[2] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 19,
+                  "id": 29,
+                  "nodeType": "Return",
+                  "src": "593:48:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 31,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getContractAuthKey",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13,
+                  "name": "contract_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31,
+                  "src": "479:29:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$2_memory_ptr",
+                    "typeString": "uint256[2]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 10,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "479:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 12,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "32",
+                      "id": 11,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "487:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_2_by_1",
+                        "typeString": "int_const 2"
+                      },
+                      "value": "2"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "479:10:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$2_storage_ptr",
+                      "typeString": "uint256[2]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "478:31:0"
+            },
+            "returnParameters": {
+              "id": 19,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31,
+                  "src": "558:17:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$2_memory_ptr",
+                    "typeString": "uint256[2]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 15,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "558:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 17,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "32",
+                      "id": 16,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "566:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_2_by_1",
+                        "typeString": "int_const 2"
+                      },
+                      "value": "2"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "558:10:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$2_storage_ptr",
+                      "typeString": "uint256[2]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "557:19:0"
+            },
+            "scope": 62,
+            "src": "451:198:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 60,
+              "nodeType": "Block",
+              "src": "843:195:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 58,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 42,
+                          "name": "authTable",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 9,
+                          "src": "854:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_array$_t_uint256_$2_storage_$_$",
+                            "typeString": "mapping(uint256 => mapping(uint256 => uint256[2] storage ref))"
+                          }
+                        },
+                        "id": 49,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 43,
+                            "name": "contract_id",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 35,
+                            "src": "864:11:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_array$_t_uint256_$2_memory_ptr",
+                              "typeString": "uint256[2] memory"
+                            }
+                          },
+                          "id": 45,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "hexValue": "30",
+                            "id": 44,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "876:1:0",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "864:14:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "854:25:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_array$_t_uint256_$2_storage_$",
+                          "typeString": "mapping(uint256 => uint256[2] storage ref)"
+                        }
+                      },
+                      "id": 50,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 46,
+                          "name": "contract_id",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 35,
+                          "src": "880:11:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_uint256_$2_memory_ptr",
+                            "typeString": "uint256[2] memory"
+                          }
+                        },
+                        "id": 48,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "31",
+                          "id": 47,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "892:1:0",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_1_by_1",
+                            "typeString": "int_const 1"
+                          },
+                          "value": "1"
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "880:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "854:41:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_uint256_$2_storage",
+                        "typeString": "uint256[2] storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "components": [
+                        {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 51,
+                            "name": "contract_auth",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 39,
+                            "src": "913:13:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_array$_t_uint256_$2_memory_ptr",
+                              "typeString": "uint256[2] memory"
+                            }
+                          },
+                          "id": 53,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "hexValue": "30",
+                            "id": 52,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "927:1:0",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "913:16:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 54,
+                            "name": "contract_auth",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 39,
+                            "src": "944:13:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_array$_t_uint256_$2_memory_ptr",
+                              "typeString": "uint256[2] memory"
+                            }
+                          },
+                          "id": 56,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "hexValue": "31",
+                            "id": 55,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "958:1:0",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            },
+                            "value": "1"
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "944:16:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "id": 57,
+                      "isConstant": false,
+                      "isInlineArray": true,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "TupleExpression",
+                      "src": "898:73:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_uint256_$2_memory_ptr",
+                        "typeString": "uint256[2] memory"
+                      }
+                    },
+                    "src": "854:117:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$2_storage",
+                      "typeString": "uint256[2] storage ref"
+                    }
+                  },
+                  "id": 59,
+                  "nodeType": "ExpressionStatement",
+                  "src": "854:117:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 61,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setContractAuthKey",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 40,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 35,
+                  "name": "contract_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 61,
+                  "src": "757:29:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$2_memory_ptr",
+                    "typeString": "uint256[2]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 32,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "757:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 34,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "32",
+                      "id": 33,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "765:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_2_by_1",
+                        "typeString": "int_const 2"
+                      },
+                      "value": "2"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "757:10:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$2_storage_ptr",
+                      "typeString": "uint256[2]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 39,
+                  "name": "contract_auth",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 61,
+                  "src": "797:31:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$2_memory_ptr",
+                    "typeString": "uint256[2]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 36,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "797:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 38,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "32",
+                      "id": 37,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "805:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_2_by_1",
+                        "typeString": "int_const 2"
+                      },
+                      "value": "2"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "797:10:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$2_storage_ptr",
+                      "typeString": "uint256[2]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "746:89:0"
+            },
+            "returnParameters": {
+              "id": 41,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "843:0:0"
+            },
+            "scope": 62,
+            "src": "719:319:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 63,
+        "src": "36:1005:0"
+      }
+    ],
+    "src": "0:1043:0"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/ContractAuth.sol",
+      "exportedSymbols": {
+        "ContractAuth": [
+          62
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "0:32:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            62
+          ],
+          "name": "ContractAuth",
+          "scope": 63
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "authTable",
+              "scope": 62,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(uint256 => mapping(uint256 => uint256[2]))",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(uint256 => mapping(uint256 => uint256[2]))"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 2,
+                    "name": "ElementaryTypeName",
+                    "src": "220:7:0"
+                  },
+                  {
+                    "attributes": {
+                      "type": "mapping(uint256 => uint256[2])"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 3,
+                        "name": "ElementaryTypeName",
+                        "src": "239:7:0"
+                      },
+                      {
+                        "attributes": {
+                          "type": "uint256[2]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 4,
+                            "name": "ElementaryTypeName",
+                            "src": "250:7:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "32",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 2",
+                              "value": "2"
+                            },
+                            "id": 5,
+                            "name": "Literal",
+                            "src": "258:1:0"
+                          }
+                        ],
+                        "id": 6,
+                        "name": "ArrayTypeName",
+                        "src": "250:10:0"
+                      }
+                    ],
+                    "id": 7,
+                    "name": "Mapping",
+                    "src": "231:30:0"
+                  }
+                ],
+                "id": 8,
+                "name": "Mapping",
+                "src": "212:50:0"
+              }
+            ],
+            "id": 9,
+            "name": "VariableDeclaration",
+            "src": "212:67:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getContractAuthKey",
+              "scope": 62,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "contract_id",
+                      "scope": 31,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "uint256[2]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "type": "uint256[2]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 10,
+                            "name": "ElementaryTypeName",
+                            "src": "479:7:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "32",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 2",
+                              "value": "2"
+                            },
+                            "id": 11,
+                            "name": "Literal",
+                            "src": "487:1:0"
+                          }
+                        ],
+                        "id": 12,
+                        "name": "ArrayTypeName",
+                        "src": "479:10:0"
+                      }
+                    ],
+                    "id": 13,
+                    "name": "VariableDeclaration",
+                    "src": "479:29:0"
+                  }
+                ],
+                "id": 14,
+                "name": "ParameterList",
+                "src": "478:31:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 31,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "uint256[2]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "type": "uint256[2]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 15,
+                            "name": "ElementaryTypeName",
+                            "src": "558:7:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "32",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 2",
+                              "value": "2"
+                            },
+                            "id": 16,
+                            "name": "Literal",
+                            "src": "566:1:0"
+                          }
+                        ],
+                        "id": 17,
+                        "name": "ArrayTypeName",
+                        "src": "558:10:0"
+                      }
+                    ],
+                    "id": 18,
+                    "name": "VariableDeclaration",
+                    "src": "558:17:0"
+                  }
+                ],
+                "id": 19,
+                "name": "ParameterList",
+                "src": "557:19:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 19
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "uint256[2] storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "type": "mapping(uint256 => uint256[2] storage ref)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 9,
+                                  "type": "mapping(uint256 => mapping(uint256 => uint256[2] storage ref))",
+                                  "value": "authTable"
+                                },
+                                "id": 20,
+                                "name": "Identifier",
+                                "src": "600:9:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 13,
+                                      "type": "uint256[2] memory",
+                                      "value": "contract_id"
+                                    },
+                                    "id": 21,
+                                    "name": "Identifier",
+                                    "src": "610:11:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "hexvalue": "30",
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "subdenomination": null,
+                                      "token": "number",
+                                      "type": "int_const 0",
+                                      "value": "0"
+                                    },
+                                    "id": 22,
+                                    "name": "Literal",
+                                    "src": "622:1:0"
+                                  }
+                                ],
+                                "id": 23,
+                                "name": "IndexAccess",
+                                "src": "610:14:0"
+                              }
+                            ],
+                            "id": 24,
+                            "name": "IndexAccess",
+                            "src": "600:25:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 13,
+                                  "type": "uint256[2] memory",
+                                  "value": "contract_id"
+                                },
+                                "id": 25,
+                                "name": "Identifier",
+                                "src": "626:11:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "hexvalue": "31",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": null,
+                                  "token": "number",
+                                  "type": "int_const 1",
+                                  "value": "1"
+                                },
+                                "id": 26,
+                                "name": "Literal",
+                                "src": "638:1:0"
+                              }
+                            ],
+                            "id": 27,
+                            "name": "IndexAccess",
+                            "src": "626:14:0"
+                          }
+                        ],
+                        "id": 28,
+                        "name": "IndexAccess",
+                        "src": "600:41:0"
+                      }
+                    ],
+                    "id": 29,
+                    "name": "Return",
+                    "src": "593:48:0"
+                  }
+                ],
+                "id": 30,
+                "name": "Block",
+                "src": "582:67:0"
+              }
+            ],
+            "id": 31,
+            "name": "FunctionDefinition",
+            "src": "451:198:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setContractAuthKey",
+              "scope": 62,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "contract_id",
+                      "scope": 61,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "uint256[2]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "type": "uint256[2]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 32,
+                            "name": "ElementaryTypeName",
+                            "src": "757:7:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "32",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 2",
+                              "value": "2"
+                            },
+                            "id": 33,
+                            "name": "Literal",
+                            "src": "765:1:0"
+                          }
+                        ],
+                        "id": 34,
+                        "name": "ArrayTypeName",
+                        "src": "757:10:0"
+                      }
+                    ],
+                    "id": 35,
+                    "name": "VariableDeclaration",
+                    "src": "757:29:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "contract_auth",
+                      "scope": 61,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "uint256[2]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "type": "uint256[2]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 36,
+                            "name": "ElementaryTypeName",
+                            "src": "797:7:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "32",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 2",
+                              "value": "2"
+                            },
+                            "id": 37,
+                            "name": "Literal",
+                            "src": "805:1:0"
+                          }
+                        ],
+                        "id": 38,
+                        "name": "ArrayTypeName",
+                        "src": "797:10:0"
+                      }
+                    ],
+                    "id": 39,
+                    "name": "VariableDeclaration",
+                    "src": "797:31:0"
+                  }
+                ],
+                "id": 40,
+                "name": "ParameterList",
+                "src": "746:89:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 41,
+                "name": "ParameterList",
+                "src": "843:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256[2] storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "uint256[2] storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "mapping(uint256 => uint256[2] storage ref)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 9,
+                                      "type": "mapping(uint256 => mapping(uint256 => uint256[2] storage ref))",
+                                      "value": "authTable"
+                                    },
+                                    "id": 42,
+                                    "name": "Identifier",
+                                    "src": "854:9:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "type": "uint256"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 35,
+                                          "type": "uint256[2] memory",
+                                          "value": "contract_id"
+                                        },
+                                        "id": 43,
+                                        "name": "Identifier",
+                                        "src": "864:11:0"
+                                      },
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "hexvalue": "30",
+                                          "isConstant": false,
+                                          "isLValue": false,
+                                          "isPure": true,
+                                          "lValueRequested": false,
+                                          "subdenomination": null,
+                                          "token": "number",
+                                          "type": "int_const 0",
+                                          "value": "0"
+                                        },
+                                        "id": 44,
+                                        "name": "Literal",
+                                        "src": "876:1:0"
+                                      }
+                                    ],
+                                    "id": 45,
+                                    "name": "IndexAccess",
+                                    "src": "864:14:0"
+                                  }
+                                ],
+                                "id": 49,
+                                "name": "IndexAccess",
+                                "src": "854:25:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 35,
+                                      "type": "uint256[2] memory",
+                                      "value": "contract_id"
+                                    },
+                                    "id": 46,
+                                    "name": "Identifier",
+                                    "src": "880:11:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "hexvalue": "31",
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "subdenomination": null,
+                                      "token": "number",
+                                      "type": "int_const 1",
+                                      "value": "1"
+                                    },
+                                    "id": 47,
+                                    "name": "Literal",
+                                    "src": "892:1:0"
+                                  }
+                                ],
+                                "id": 48,
+                                "name": "IndexAccess",
+                                "src": "880:14:0"
+                              }
+                            ],
+                            "id": 50,
+                            "name": "IndexAccess",
+                            "src": "854:41:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isInlineArray": true,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "type": "uint256[2] memory"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 39,
+                                      "type": "uint256[2] memory",
+                                      "value": "contract_auth"
+                                    },
+                                    "id": 51,
+                                    "name": "Identifier",
+                                    "src": "913:13:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "hexvalue": "30",
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "subdenomination": null,
+                                      "token": "number",
+                                      "type": "int_const 0",
+                                      "value": "0"
+                                    },
+                                    "id": 52,
+                                    "name": "Literal",
+                                    "src": "927:1:0"
+                                  }
+                                ],
+                                "id": 53,
+                                "name": "IndexAccess",
+                                "src": "913:16:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 39,
+                                      "type": "uint256[2] memory",
+                                      "value": "contract_auth"
+                                    },
+                                    "id": 54,
+                                    "name": "Identifier",
+                                    "src": "944:13:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "hexvalue": "31",
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "subdenomination": null,
+                                      "token": "number",
+                                      "type": "int_const 1",
+                                      "value": "1"
+                                    },
+                                    "id": 55,
+                                    "name": "Literal",
+                                    "src": "958:1:0"
+                                  }
+                                ],
+                                "id": 56,
+                                "name": "IndexAccess",
+                                "src": "944:16:0"
+                              }
+                            ],
+                            "id": 57,
+                            "name": "TupleExpression",
+                            "src": "898:73:0"
+                          }
+                        ],
+                        "id": 58,
+                        "name": "Assignment",
+                        "src": "854:117:0"
+                      }
+                    ],
+                    "id": 59,
+                    "name": "ExpressionStatement",
+                    "src": "854:117:0"
+                  }
+                ],
+                "id": 60,
+                "name": "Block",
+                "src": "843:195:0"
+              }
+            ],
+            "id": 61,
+            "name": "FunctionDefinition",
+            "src": "719:319:0"
+          }
+        ],
+        "id": 62,
+        "name": "ContractDefinition",
+        "src": "36:1005:0"
+      }
+    ],
+    "id": 63,
+    "name": "SourceUnit",
+    "src": "0:1043:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x8D57243a1A633122aa888837008b1CFC1478F4d4",
+      "transactionHash": "0xa57e01769d266236a4f30a465dca3c3d226d586edb10e13a677de82459ceb77f"
+    },
+    "1638107507843": {
+      "events": {},
+      "links": {},
+      "address": "0xebF6d0A3022E3457C5bEBb5B9a1a6225917AEa47",
+      "transactionHash": "0x9ec444ad29dc95128c2228435e1e336d7e68b1027997f1d8da8c94cda9538d6f"
+    }
+  },
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-11-28T15:49:27.026Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

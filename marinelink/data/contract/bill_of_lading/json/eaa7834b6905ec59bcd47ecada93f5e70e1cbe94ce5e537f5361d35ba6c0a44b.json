@@ -1,0 +1,44 @@
+{
+  "bl_no": "6a3f0cd9a0501062ae4fee73",
+  "consignor": {
+    "name": "kima",
+    "TEL": "0101111231",
+    "FAX": "02-000-0000",
+    "location": "SEOUL, KOREA"
+  },
+  "consignee": {
+    "name": "cosignee_name",
+    "location": "SEOUL, KOREA",
+    "TEL": "02-000-0000",
+    "FAX": "02-000-0000"
+  },
+  "notify_party": [
+    {
+      "name": "reciver",
+      "TEL": "02-000-0000123",
+      "FAX": "02-000-0000",
+      "location": "SEOUL, KOREA"
+    }
+  ],
+  "pre_carriage_by": "pre_carriage",
+  "place_of_receipt": "Receipt Place",
+  "ocean_vessel": "ocean_vessel_name",
+  "port_of_loading": "port name",
+  "port_of_discharge": "port name",
+  "place_of_delivery": "department place",
+  "export_references": "asd",
+  "forwarding_agent_reference": "asd",
+  "point_and_country_of_origin": "",
+  "domestic_routing__export_instructions": "asd",
+  "onward_inland_routing": "",
+  "for_transshipment_to": "",
+  "final_destination": "",
+  "marks_n_number": "",
+  "no_of_count_or_pkgs": "",
+  "description_of_pkgs_or_goods": "",
+  "goods_weight": "",
+  "measurement": "",
+  "freight_and_charges_revenue_tons_rate_per": "",
+  "prepaid": "",
+  "collect": ""
+}

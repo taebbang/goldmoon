@@ -1,0 +1,50 @@
+{
+  "bl_no": 0,
+  "consignor": {
+    "name": "test",
+    "location": "SEOUL, KOREA",
+    "TEL": "01012341234",
+    "FAX": "02-000-0000"
+  },
+  "consignee": {
+    "name": "cosignee_name",
+    "location": "SEOUL, KOREA",
+    "TEL": "02-000-0000",
+    "FAX": "02-000-0000"
+  },
+  "notify_party": [
+    {
+      "name": "reciver",
+      "location": "SEOUL, KOREA",
+      "TEL": "02-000-0000",
+      "FAX": "02-000-0000"
+    },
+    {
+      "name": "reciver",
+      "location": "SEOUL, KOREA",
+      "TEL": "02-000-0000",
+      "FAX": "02-000-0000"
+    }
+  ],
+  "pre_carriage_by": "pre_carriage",
+  "place_of_receipt": "Receipt Place",
+  "ocean_vessel": "ocean_vessel_name",
+  "port_of_loading": "port name",
+  "port_of_discharge": "port name",
+  "place_of_delivery": "department place",
+  "export_references": "",
+  "forwarding_agent_reference": "",
+  "point_and_country_of_origin": "",
+  "domestic_routing__export_instructions": "",
+  "onward_inland_routing": "",
+  "for_transshipment_to": "",
+  "final_destination": "",
+  "marks_n_number": "",
+  "no_of_count_or_pkgs": "",
+  "description_of_pkgs_or_goods": "",
+  "goods_weight": "",
+  "measurement": "",
+  "freight_and_charges_revenue_tons_rate_per": "",
+  "prepaid": "",
+  "collect": ""
+}

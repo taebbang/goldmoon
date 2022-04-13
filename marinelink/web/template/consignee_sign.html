@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js">
+    </script>
+    <meta charset="UTF-8">
+    <title>MarineLink Contract</title>
+    <div id="content-body">
+        <h3>Confirm Information For Consignee</h3>
+        <div id="contract_id" style="font-size: 0">{{contract_id}}</div>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="phone">Phone:</label><br>
+            <input type="tel" id="phone" name="phone">
+            <button onclick="submitEvent(event)">submit</button>
+        </form>
+    </div>
+    <div id="canvas_container">
+        <canvas id="pdf_renderer"></canvas>
+    </div>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    function submitEvent(event) {
+      event.preventDefault()
+      const contract_id = document.getElementById("contract_id").textContent
+      const name = document.getElementById("name").value
+      const phone = document.getElementById("phone").value
+      const regex = /http[s]{0,1}:\/\//;
+      const base_url = "http://" + window.location.host.replace(regex, "").split(":")[0] + ":4242"
+      let src_url = base_url + "/api/contract/consignee/" + contract_id + "/" + window.btoa(name + "@|pnq|@" + phone)
+      // document.getElementById("content-body").innerHTML = `<button onclick="postSign(${base_url}, ${contract_id}, ${name}, ${phone})">Sign</button>`
+
+
+      let myState = {
+            pdf: null,
+            currentPage: 1,
+            zoom: 1
+        }
+
+      pdfjsLib.getDocument(src_url).then((pdf) => {
+        myState.pdf = pdf;
+        render();
+        document.getElementById("content-body").innerHTML = `<button >Sign</button>`
+        document.getElementById("content-body").addEventListener("click", async function (event) {
+          event.preventDefault()
+          if(confirm("Really Sign Contract?")){
+            try {
+              const response = await fetch(base_url + '/api/contract/' + contract_id, {
+                method: 'post',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  name: name,
+                  phone: phone,
+                })
+              });
+              if(response.status === 200) {
+                alert("Success Sign")
+              }
+            } catch(err) {
+              console.error(`Error: ${err}`);
+            }
+            window.close();
+        }
+      });
+      });
+
+      function render() {
+        myState.pdf.getPage(myState.currentPage).then((page) => {
+          let canvas = document.getElementById("pdf_renderer");
+          let ctx = canvas.getContext('2d');
+          let viewport = page.getViewport(myState.zoom);
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+          page.render({
+            canvasContext: ctx,
+            viewport: viewport
+          })
+        });
+      }
+
+    }
+</script>
+</html>

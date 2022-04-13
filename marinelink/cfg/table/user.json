@@ -1,0 +1,38 @@
+{
+  "name": "USER",
+  "schema": {
+    "USER_INDEX": "INTEGER PRIMARY KEY AUTOINCREMENT",
+    "ID": "TEXT NOT NULL UNIQUE",
+    "PWD": "TEXT NOT NULL",
+    "EMAIL": "TEXT",
+    "PHONE": "TEXT",
+    "NAME": "TEXT",
+    "TOKEN_KEY": "TEXT",
+    "EMAIL_AUTH": "INTEGER NOT NULL",
+    "IS_DELETE": "INTEGER NOT NULL"
+  },
+  "relation": {
+  },
+  "map": {
+    "USER_INDEX": "index",
+    "ID": "id",
+    "PWD": "pwd",
+    "EMAIL": "email",
+    "PHONE": "phone",
+    "NAME": "name",
+    "TOKEN_KEY": "token_key",
+    "EMAIL_AUTH": "email_auth",
+    "IS_DELETE": "is_delete"
+  },
+  "invert_map": {
+    "index": "USER_INDEX",
+    "id": "ID",
+    "pwd": "PWD",
+    "email": "EMAIL",
+    "phone": "PHONE",
+    "name": "NAME",
+    "token_key": "TOKEN_KEY",
+    "email_auth": "EMAIL_AUTH",
+    "is_delete": "IS_DELETE"
+  }
+}
