@@ -1,6 +1,8 @@
 # Marinelink(blockchain platform)
 
 The code was written to create a reliable bill of lading platform by placing the bill of lading on the blockchain.
+if you want to know our service, please read below pdf file
+https://drive.google.com/file/d/1SbVk5AhKQOhFacigZ9U7W1alNZ_A-Tjx/view?usp=sharing
 
 ## Getting Started
 
